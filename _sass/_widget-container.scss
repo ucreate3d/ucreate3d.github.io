@@ -1,0 +1,68 @@
+$parallax-window-height: 80em;
+$parallax-background-height: $parallax-window-height * 2;
+
+.parallax-window {
+  max-height: $parallax-window-height;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.parallax-static-content {
+  color: #9A9A8A;
+  padding: 2em 0;
+  position: relative;
+  z-index: 9;
+  overflow: visible;
+  
+  section {
+    @include outer-container(60%);
+    @include border-top-radius(10px);
+    @include border-bottom-radius(10px);
+    min-width: 300px;
+    background-color: white;
+  }
+  
+}
+
+.parallax-background {
+  background: url("/i/bg-2.jpg") repeat;
+  background-position: top;
+  background-size: cover;
+  background-color: #777;
+  height: $parallax-background-height;
+  left: 0;
+  position: absolute;
+  top: - $parallax-window-height / 3;
+  width: 100%;
+}
+
+// Based on http://codepen.io/skeurentjes/
+
+
+$texture-top-background: lighten(#fff, 1%);
+$texture-bottom-background: darken(#fff, 10%);
+
+.create-and-customize {
+  @include texture(180deg, $texture-top-background, $texture-bottom-background, 63, 1);
+  @include padding(4em);
+  text-align: center;
+  //@include background(url('/i/line_diagonal2.png'), linear-gradient(180deg, center no-repeat scroll)
+  width: 100%;
+  
+  h1 {
+    font-size: 2.0em;
+    margin-bottom: 0.5em;
+  }
+  
+  p {
+    font-size: 1.4em;
+    font-weight: 400;
+  }
+  
+}
+
+#grom-widget { 
+  padding-top: 2em; 
+}

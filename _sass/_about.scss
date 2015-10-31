@@ -1,0 +1,61 @@
+$parallax-about-window-height: 80em;
+$parallax-about-background-height: $parallax-window-height * 2;
+
+.parallax-about-background {
+  background: url("/i/bg-about.jpg") repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  background-color: #777;
+  height: $parallax-about-background-height;
+  left: 0;
+  position: absolute;
+  top: - $parallax-about-window-height / 4;
+  width: 100%;
+}
+
+.parallax-about-content {
+  @include outer-container(60%);
+  color: #fff;
+  padding: 2em 0;
+  position: relative;
+  z-index: 9;
+  overflow: visible;
+  
+  h1 {
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
+    
+  }
+  
+  a {
+    color: $grom-red;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      color: $grom-red;
+    }    
+  }
+  
+  p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #777;
+    text-shadow: #fff 0 1px;
+  }
+  
+  img[alt="#500STRONG"] {
+    height: 128px;
+    width: 128px;
+  }
+  
+  img[alt="IndieGoGo"] {
+    height: 133px;
+    width: 200px;
+  }
+  
+}

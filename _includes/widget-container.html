@@ -1,0 +1,26 @@
+<section class="widget">
+<div class="create-and-customize">
+
+{% capture widgetheader %}{% include copy/widget-header.md %}{% endcapture %}
+{{ widgetheader | markdownify }}
+
+</div>
+<div id="js-parallax-window" class="parallax-window">
+  <div class="parallax-static-content">
+
+    <section id="customize">
+      <div id="grom-widget"></div>
+      {% case jekyll.environment %}
+      {% when 'development' %}
+      <script src="//localhost:3000/static/bundle.js"></script>
+      {% when 'staging' %}
+      <script cfasync="false" src="//w-preview.grom.io/bundle.js"></script>
+      {% when 'production' %}
+      <script cfasync="false" src="//w.grom.io/bundle.js"></script>
+      {% endcase %}
+    </section>
+
+  </div>
+  <div id="js-parallax-background" class="parallax-background"></div>
+</div>
+</section>

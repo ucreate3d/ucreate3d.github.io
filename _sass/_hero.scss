@@ -1,0 +1,73 @@
+.hero {  
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $large-screen: em(860) !default;
+  $hero-background-top: #7F99BE; 
+  $hero-background-bottom: #20392B;
+  $hero-color: white;
+  $gradient-angle: 10deg;
+  $hero-image: '/i/hero01.jpg';
+  $shadow-color: #777;
+
+  @include background(url($hero-image), no-repeat $hero-background-top);
+  background-color: #fff;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 3em;
+
+  .hero-logo img {
+    height: 4em;
+    margin-bottom: 1em;
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    margin: auto;
+    padding: 7.5em;
+    text-align: center;
+
+    .hero-copy {
+      text-align: center;
+      
+      h1 {
+        color: $hero-color;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 2px;
+        margin-bottom: 0.5em;
+        margin-top: 2em;
+
+        @include media($large-screen) {
+          font-size: 50px;
+        }
+      }
+
+      p {
+        color: $hero-color;
+        text-shadow: $shadow-color 0 1px;
+        line-height: 1.4em;
+        margin: 0 auto 3em auto; 
+        font-size: 24px;
+        
+
+        @include media($large-screen) {
+          font-size: 24px;
+          max-width: 90%;
+        }
+      }
+    }
+  }
+}
+
+//.js-fade-element-hide {
+//  opacity: 0;
+//}
+//
+//.js-fade-element-show {
+//  @include transition (all 0.4s ease-in-out);
+//  opacity: 1;
+//}

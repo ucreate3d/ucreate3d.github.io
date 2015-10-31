@@ -1,0 +1,66 @@
+// spinner for form submission
+@mixin rotate-forever {
+  0%    { @include transform(rotate(0deg)); }
+  100%  { @include transform(rotate(360deg)); }
+}
+@-webkit-keyframes rotate-forever { @include rotate-forever; }
+   @-moz-keyframes rotate-forever { @include rotate-forever; }
+        @keyframes rotate-forever { @include rotate-forever; }
+
+
+section.contact {
+  @include outer-container(60%);
+  text-align: center;
+  padding: 0 0 3em 0;
+  position: relative;
+
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #333;
+    white-space: pre;
+  }
+
+  .contact-form-container {
+    @include span-columns(10);
+    @include shift(1);
+    text-align: left;
+
+    p {
+      @include span-columns(3 of 9);
+      @include omega(3n);
+    }
+
+    div {
+      @include omega();
+    }
+
+
+  }
+  .loading-spinner {
+    @include animation-duration(0.75s);
+    @include animation-iteration-count(infinite);
+    @include animation-name(rotate-forever);
+    @include animation-timing-function(linear);
+    @include size(30px);
+    border: 8px solid #40526B;
+    border-right-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+
+    @include position(absolute, 50% 0 0 50%);
+    margin: -30px/2 0 0 -30px/2;
+    //margin-left: -30px/2;
+    //margin-right: -30px/2;
+    z-index: 200;
+  }
+
+
+
+}
+
+.inline-label {
+  display: inline;
+  font-weight: 400;
+}

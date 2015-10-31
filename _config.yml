@@ -1,0 +1,25 @@
+# Site settings
+title: "UCreate3D"
+email: info@ucreate3d.com
+description: 3D Printing for Retail
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://www.ucreate3d.com" # the base hostname & protocol for your site
+twitter_username: getgrom
+#github_username:  gromnomnom
+
+# Build settings
+markdown: kramdown
+exclude: ["vendor", "Gemfile", "Gemfile.lock", ".bundle", "bin", "README.md"]
+timezone: America/Los_Angeles
+
+gems:
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jemoji
+  - jekyll-sitemap
+  
+kramdown:
+  input: GFM
+  
+sass:
+  style: compressed

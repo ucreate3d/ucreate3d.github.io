@@ -1,0 +1,143 @@
+section.team {
+  @include outer-container(60%);
+  text-align: center;
+  padding: 0 0 3em 0;
+
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #333;
+    white-space: pre;
+  }
+  
+  &:after {
+    content: '';
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px;
+    border-top: 2px solid #444;    
+  }
+  
+  .flex-boxes {
+    $base-border-radius: 3px !default;
+    $base-background-color: white !default;
+    $dark-gray: #333 !default;
+    $light-gray: #DDD !default;
+    $base-font-color: $dark-gray !default;
+    $flex-box-border-color: $light-gray;
+    //$flex-box-border: 1px solid $flex-box-border-color;
+    $flex-box-background: lighten($light-gray, 10%);
+    //$flex-box-gutter: 0.4em;
+    $flex-box-width: 18em;
+    $flex-box-color: transparentize($base-font-color, 0.3);
+
+
+    @include clearfix;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(stretch);
+    @include flex-wrap(wrap);
+    clear: both;
+    text-align: center;
+
+    .flex-box {
+      @include position(relative, 0 0 0 0);
+      @include transition (all 0.2s ease-in-out);
+      @include flex(0 1 auto);
+      @include align-self(center);
+      padding: 1em 1em 1em 1em;
+      
+      // bio related
+      $bio-background: white;
+      $bio-color: $base-font-color;
+      $bio-max-width: $flex-box-width;
+      $bio-arrow-width: 8px;
+      $bio-shadow: 0 2px 2px silver;
+      $bio-distance-from-item: -2em;
+      $bio-arrow-distance-from-box: -0.9em;
+      
+      &:focus,
+      &:hover .bio {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .bio {
+        //@include position(absolute, null 0 $bio-distance-from-item 0);
+        @include position(absolute, 296px 0 0 0);
+        @include transition (all 0.2s ease-in-out);
+        background-color: $bio-background;
+        background: #fff;
+        border-radius: $base-border-radius;
+        box-shadow: $bio-shadow;
+        color: $bio-color;
+        font-size: 0.9em; // Make sure you use -webkit-backface-visibility: hidden; on the body element to prevent 1px nudging bugs.
+        line-height: 1.5em;
+        margin: 0 auto;
+        max-width: $bio-max-width;
+        width: $bio-max-width;
+        opacity: 0.8;
+        padding: 1em;
+        visibility: hidden;
+        z-index: 10;
+        
+
+        .bio-links {
+          text-align: center;
+          padding: 16px;
+        }
+        
+
+        .blurb {
+          color: $base-font-color;
+          line-height: $base-line-height;
+          text-align: justify;
+          //margin: 0;
+        }
+
+      }
+
+      img {
+        display: block;
+        width: 250px;
+        height: 187px;
+      }
+
+      .flex-title {
+        color: $flex-box-color;
+        font-size: 1.2em;
+        margin-top: 0.3em;
+        margin-bottom: 0.2em;
+        text-align: center;
+      }
+
+      h2 {
+        color: transparentize($grom-red, 0.1);
+        line-height: 1.5;
+        font-family: $crete-round;
+        font-weight: 400;
+        font-style: italic;
+        margin-top: 5px;
+      }
+      
+    }
+
+    .flex-box-big {
+      @include flex(1 1 40em);
+    }
+  }
+  
+  
+  
+}
+
+.team-header {
+
+  @include padding(4em null null 1em);
+  text-align: center;
+  width: 100%;
+
+}

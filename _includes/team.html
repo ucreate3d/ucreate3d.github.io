@@ -1,0 +1,40 @@
+<section class="team">
+  <div class="team-header" id="team">
+  
+  {% capture teamheader %}{% include copy/team-header.md %}{% endcapture %}
+  {{ teamheader | markdownify }}
+
+  </div>
+
+
+  <div class="flex-boxes">
+    
+    {% for mate in site.data.team %}
+      <div class="flex-box">
+         <div class="always-visible">
+           <img src="/i/{{ mate.photo }}" alt="{{ mate.name }}">
+           <h1 class="flex-title">{{ mate.name | upcase }}</h1>
+           <h2>{{ mate.label | strip_newlines }}</h2>
+         </div>
+         <div class="bio">
+          <p class="blurb">{{ mate.blurb | strip_newlines }}</p>
+          <p class="bio-links">{% if mate.twitter %}
+            <a href="https://twitter.com/{{ mate.twitter }}"><span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span></a>{% endif %}{% if mate.linkedin %}
+            <a href="https://www.linkedin.com/in/{{ mate.linkedin }}"><span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+            </span></a>{% endif %}{% if mate.github %}
+            <a href="https://github.com/{{ mate.github }}"><span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+            </span></a>{% endif %}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+</section>
