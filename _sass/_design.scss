@@ -1,5 +1,5 @@
 section.design {
-  .design-side-image {
+  .side-image {
     $base-line-height: 1.5em !default;
     $action-color: #477DCA !default;
     $dark-gray: #333 !default;
@@ -17,12 +17,12 @@ section.design {
     }
 
     
-    .design-images-wrapper {
-      @include background(url('/i/blue-bplate.jpg'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top);
+    .images-wrapper {
+      @include background(url('/i/blue-bplate.jpg'), no-repeat $side-image-background-top);
 
-      background-color: $side-image-background-top;
+      //background-color: $side-image-content-background;
       background-size: cover;
-      border-bottom: $side-image-border;
+      //border-bottom: $side-image-border;
       display: block;
       min-height: 12em;
       padding: 3em;

@@ -1,61 +1,71 @@
-$parallax-about-window-height: 80em;
-$parallax-about-background-height: $parallax-window-height * 2;
+section.about {
+  .side-image {
+    $base-line-height: 1.5em !default;
+    $action-color: #477DCA !default;
+    $dark-gray: #333 !default;
+    $large-screen: em(860) !default;
+    $base-font-color: $dark-gray !default;
+    $side-image-background-top: #B5EBEB;
+    $side-image-background-bottom: #5DAC5D;
+    $side-image-content-background: #F9F9F9;
+    $side-image-border: 1px solid darken(transparentize($side-image-background-bottom, 0.8), 30%);
 
-.parallax-about-background {
-  background: url("/i/bg-about.jpg") repeat;
-  background-position: 50% 0;
-  background-size: cover;
-  background-color: #777;
-  height: $parallax-about-background-height;
-  left: 0;
-  position: absolute;
-  top: - $parallax-about-window-height / 4;
-  width: 100%;
-}
+    background: $side-image-content-background;
 
-.parallax-about-content {
-  @include outer-container(60%);
-  color: #fff;
-  padding: 2em 0;
-  position: relative;
-  z-index: 9;
-  overflow: visible;
-  
-  h1 {
-    margin-bottom: 0;
-    font-weight: 700;
-    font-size: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #333;
+    @include media($large-screen) {
+      @include row(table);
+    }
+
     
-  }
-  
-  a {
-    color: $grom-red;
-    text-decoration: none;
+    .images-wrapper {
+      @include background(url('/i/pink-bplate.jpg'), no-repeat $side-image-background-top);
 
-    &:focus,
-    &:hover {
-      color: $grom-red;
-    }    
+      //background-color: $side-image-content-background;
+      background-size: cover;
+      //border-bottom: $side-image-border;
+      display: block;
+      min-height: 12em;
+      padding: 3em;
+
+      @include media($large-screen) {
+        @include span-columns(4);
+        background-position: bottom;
+        background-size: cover;
+        border-right: $side-image-border;
+      }
+    }
+
+    .side-image-content {
+      @include span-columns(12);
+      padding: 1em 1em 4em 1em;
+
+      @include media($large-screen) {
+        @include span-columns(8);
+        padding: 4em 4em 8em 4em;
+      }
+
+      h1 {
+        margin-bottom: 0.9em;
+      }
+
+      h4 {
+        background: #BBB;
+        color: white;
+        display: inline-block;
+        font-size: 0.75em;
+        margin-bottom: 1.3em;
+        padding: 3px 8px;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: $base-font-color;
+        line-height: $base-line-height;
+        margin-bottom: 3em;
+      }
+    }
+
+    @include reset-display();
+
   }
-  
-  p {
-    font-size: 20px;
-    font-weight: 400;
-    color: #777;
-    text-shadow: #fff 0 1px;
-  }
-  
-  img[alt="#500STRONG"] {
-    height: 128px;
-    width: 128px;
-  }
-  
-  img[alt="IndieGoGo"] {
-    height: 133px;
-    width: 200px;
-  }
-  
 }

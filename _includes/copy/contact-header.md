@@ -1,3 +1,3 @@
 # Contact Us
 
-No matter how you want to reach us, we will be available and waiting for you! Don't be shy, send us your question.
+We are always excited to hear what you think about our products! Don't be shy, send us your questions and ideas. We're here to help.
