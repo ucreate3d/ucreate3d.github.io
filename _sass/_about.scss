@@ -18,7 +18,7 @@ section.about {
 
     
     .images-wrapper {
-      @include background(url('/i/pink-bplate.jpg'), no-repeat $side-image-background-top);
+      @include background(url('/i/pink-bplate-lg.jpg'), no-repeat $side-image-background-top);
 
       //background-color: $side-image-content-background;
       background-size: cover;
