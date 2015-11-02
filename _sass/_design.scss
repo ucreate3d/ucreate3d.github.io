@@ -44,8 +44,15 @@ section.design {
         padding: 4em 4em 8em 4em;
       }
 
+//      h1 {
+//        margin-bottom: 0.9em;
+//      }
       h1 {
-        margin-bottom: 0.9em;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #333;
       }
 
       h4 {
@@ -61,6 +68,8 @@ section.design {
       p {
         color: $base-font-color;
         line-height: $base-line-height;
+        font-size: 1.4em;
+        font-weight: 400;
         margin-bottom: 3em;
       }
     }
